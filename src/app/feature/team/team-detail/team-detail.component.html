@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div class='component-content'>
+<table class="table table-striped" *ngIf='team'>
+  <tr>
+    <th>Team Name</th>
+    <td>{{ team.Location + " " + team.TeamName }}</td>
+  </tr>
+  <tr>
+    <th>Division</th>
+    <td>{{ team.Division }}</td>
+  </tr>
+  <tr>
+    <th>Record</th>
+    <td>{{ team.Record }}</td>
+  </tr>
+  <tr>
+    <th>Points Per Game</th>
+    <td>{{ team.Ppg }}</td>
+  </tr>
+  <tr>
+    <th>Points Allowed Per Game</th>
+    <td>{{ team.PointsAllowedPG }}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <a routerLink='/team/edit/{{team.Id}}' class="btn btn-primary" title="Update">Update</a>
+      <a routerLink='/team/list' class="btn btn-secondary" title="Back">Back</a>
+    </td>
+  </tr>
+</table>
+</div>

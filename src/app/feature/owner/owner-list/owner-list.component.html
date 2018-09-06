@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="component-content">
+  <div class="lefthalf">
+    <span class="component-title"><b>{{ title }}</b></span>
+  </div>
+</div>
+<p *ngIf='!owners'>Loading...</p>
+<table class='table table-striped' *ngIf='owners'>
+  <tr>
+    <th>Owner Name</th>
+    <th>Team Name</th>
+    <th>Record</th>
+    <th class="btn-link"><a data-toggle="tooltip" title="Sort" class="btn btn-link font-weight-bold" (click)="setSortBy('TotalPoints')">Total Points</a></th>
+    <th>Points Allowed</th>
+    <th>Points Diff</th>
+    <th class="pad">Details/Update</th>
+  </tr>
+  <tr *ngFor='let o of owners | sort:sortBy'>
+    <td>{{ o.OwnerName }}</td>
+    <td>{{ o.TeamName }}</td>
+    <td>{{ o.Record }}</td>
+    <td>{{ o.TotalPoints }}</td>
+    <td>{{ o.PointsAllowed }}</td>
+    <td>{{ o.TotalPoints - o.PointsAllowed }}</td>
+    <td class="actions">
+      <a routerLink='/owner/detail/{{o.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+      <a routerLink='/owner/edit/{{o.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Update'></a>
+    </td>
+  </tr>
+</table>

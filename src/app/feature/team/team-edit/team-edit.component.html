@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div class='component-content'>
+  <p *ngIf='!team'>Loading...</p>
+  <div *ngIf='team'>
+    <div class="form-group row" id="pad">
+      <label class='col-form-label col-sm-2' for="teamrecord"><b>Record:</b></label>
+      <input [(ngModel)]='team.Record' name='Record' type='text' class='form-control col-sm-6' id='teamrecord' aria-describedby="trecordHelp" placeholder="Record">
+      <small id="trecordHelp" class="form-text text-muted col-sm-2">Record</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="teamppg"><b>PPG:</b></label>
+      <input [(ngModel)]='team.Ppg' name='PPG' type='text' class='form-control col-sm-6' id='teamppg' aria-describedby="teamppgHelp" placeholder="PPG">
+      <small id="teamppgHelp" class="form-text text-muted col-sm-2">PPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="teamptsallpg"><b>Points Allowed Per Game:</b></label>
+      <input [(ngModel)]='team.PointsAllowedPG' name='PointsAllowedPerGame' type='text' class='form-control col-sm-6' id='teamptsallpg' aria-describedby="ptsallpgHelp" placeholder="Points Allowed Per Game">
+      <small id="ptsallpgHelp" class="form-text text-muted col-sm-2">Points Allowed Per Game</small>
+    </div>
+    <div class="form-group">
+      <button title="Update Team" (click)='change()'
+      class='btn btn-primary'>Submit</button>
+    </div>
+  </div>
+</div>

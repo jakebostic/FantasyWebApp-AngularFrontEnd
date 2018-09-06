@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+<div class='component-content'>
+  <p *ngIf='!player'>Loading...</p>
+  <div *ngIf='player'>
+    <div class="form-group row" id="pad">
+      <label class='col-form-label col-sm-2' for="ownername"><b>Owner:</b></label>
+      <select [(ngModel)]='player.Owner' name='OwnerName' class='form-control col-sm-6' id='ownername'>
+      <option *ngFor='let o of owners' [ngValue]="o">{{ o.OwnerName }}</option>
+      </select>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="name"><b>Name:</b></label>
+      <input [(ngModel)]='player.LastName' name='Name' type='text' class='form-control col-sm-6' id='name' aria-describedby="nameHelp" placeholder="Name">
+      <small id="nameHelp" class="form-text text-muted col-sm-2">Name</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ppg"><b>PPG:</b></label>
+      <input [(ngModel)]='player.Ppg' name='Ppg' type='text' class='form-control col-sm-6' id='ppg' aria-describedby="ppgHelp" placeholder="PPG">
+      <small id="ppgHelp" class="form-text text-muted col-sm-2">PPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="totalpts"><b>Total Points:</b></label>
+      <input [(ngModel)]='player.PointsTotal' name='TotalPoints' type='text' class='form-control col-sm-6' id='totalpts' aria-describedby="totalptsHelp" placeholder="Total Points">
+      <small id="totalptsHelp" class="form-text text-muted col-sm-2">Total Points</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="carries"><b>Carries:</b></label>
+      <input [(ngModel)]='player.Carries' name='Carries' type='text' class='form-control col-sm-6' id='carries' aria-describedby="carriesHelp" placeholder="Carries">
+      <small id="carriesHelp" class="form-text text-muted col-sm-2">Carries</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="carriespg"><b>Carries Per Game:</b></label>
+      <input [(ngModel)]='player.CarriesPG' name='CarriesPG' type='text' class='form-control col-sm-6' id='carriespg' aria-describedby="carriespgHelp" placeholder="Carries PG">
+      <small id="carriespgHelp" class="form-text text-muted col-sm-2">Carries PG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="catches"><b>Catches:</b></label>
+      <input [(ngModel)]='player.Catches' name='Catches' type='text' class='form-control col-sm-6' id='catches' aria-describedby="catchesHelp" placeholder="Catches">
+      <small id="catchesHelp" class="form-text text-muted col-sm-2">Catches</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="catchespg"><b>Catches Per Game:</b></label>
+      <input [(ngModel)]='player.CatchesPG' name='CatchesPG' type='text' class='form-control col-sm-6' id='catchespg' aria-describedby="catchespgHelp" placeholder="Catches PG">
+      <small id="catchespgHelp" class="form-text text-muted col-sm-2">Catches PG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="playerypg"><b>YPG:</b></label>
+      <input [(ngModel)]='player.Ypg' name='YPG' type='text' class='form-control col-sm-6' id='playerypg' aria-describedby="playerypgHelp" placeholder="YPG">
+      <small id="playerypgHelp" class="form-text text-muted col-sm-2">YPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="playertotalyards"><b>Total Yards:</b></label>
+      <input [(ngModel)]='player.YardsTotal' name='TotalYards' type='text' class='form-control col-sm-6' id='ownertotalyards' aria-describedby="totalyardsHelp" placeholder="Total Yards">
+      <small id="totalyardsHelp" class="form-text text-muted col-sm-2">Total Yards</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="touchdowns"><b>Touchdowns:</b></label>
+      <input [(ngModel)]='player.Touchdowns' name='Touchdowns' type='text' class='form-control col-sm-6' id='touchdowns' aria-describedby="tdsHelp" placeholder="Touchdowns">
+      <small id="tdsHelp" class="form-text text-muted col-sm-2">Touchdowns</small>
+    </div>
+    <div class='form-group'>
+      <button title="Update Team" (click)='change()' class='btn btn-primary'>Submit</button>
+    </div>
+  </div>
+</div>

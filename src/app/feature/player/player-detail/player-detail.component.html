@@ -1,0 +1,64 @@
+<app-menu></app-menu>
+<div class="component-content">
+<table class="table table-striped" *ngIf='player'>
+  <tr>
+    <th>Name</th>
+    <td>{{ player.FirstName + " " + player.LastName }}</td>
+  </tr>
+  <tr>
+    <th>Position</th>
+    <td>{{ player.Position }}</td>
+  </tr>
+  <tr>
+    <th>Team</th>
+    <td>{{ player.Team.Location + " " + player.Team.TeamName }}</td>
+  </tr>
+  <tr>
+    <th>Owner</th>
+    <td>{{ player.Owner.OwnerName + " " + "-" + " " + player.Owner.TeamName }}</td>
+  </tr>
+  <tr>
+    <th>PPG</th>
+    <td>{{ player.Ppg }}</td>
+  </tr>
+  <tr>
+    <th>Total Points</th>
+    <td>{{ player.PointsTotal }}</td>
+  </tr>
+  <tr>
+    <th>Carries</th>
+    <td>{{ player.Carries }}</td>
+  </tr>
+  <tr>
+    <th>Carries Per Game</th>
+    <td>{{ player.CarriesPG }}</td>
+  </tr>
+  <tr>
+    <th>Catches</th>
+    <td>{{ player.Catches }}</td>
+  </tr>
+  <tr>
+    <th>Catches Per Game</th>
+    <td>{{ player.CatchesPG }}</td>
+  </tr>
+  <tr>
+    <th>YPG</th>
+    <td>{{ player.Ypg }}</td>
+  </tr>
+  <tr>
+    <th>Total Yards</th>
+    <td>{{ player.YardsTotal }}</td>
+  </tr>
+  <tr>
+    <th>Touchdowns</th>
+    <td>{{ player.Touchdowns }}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <a routerLink='/player/edit/{{player.Id}}' class="btn btn-primary" title="Update">Update</a>
+      <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+      <a routerLink='/player/list' class='btn btn-secondary' title='Back'>Back</a>
+    </td>
+  </tr>
+</table>
+</div>

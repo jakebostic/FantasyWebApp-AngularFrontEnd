@@ -1,0 +1,86 @@
+<app-menu></app-menu>
+<div class="component-content">
+  <div>
+    <span class="component-title">{{ title }}</span>
+  </div>
+  <p *ngIf='!player'>Loading...</p>
+  <div *ngIf='player'>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="playerfirstname"><b>First Name:</b></label>
+      <input [(ngModel)]='player.FirstName' name='FirstName' type="text" class="form-control col-sm-6" id="playerfirstname" aria-describedby="fnameHelp" placeholder="First Name">
+      <small id="fnameHelp" class="form-text text-muted col-sm-2">First Name</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="playerlastName"><b>Last Name:</b></label>
+      <input [(ngModel)]='player.LastName' name='LastName' type="text" class="form-control col-sm-6" id="userlastname" aria-describedby="lnameHelp" placeholder="Last Name">
+      <small id="lnameHelp" class="form-text text-muted col-sm-2">Last Name</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="position"><b>Position:</b></label>
+      <input [(ngModel)]='player.Position' name='Position' type="text" class="form-control col-sm-6" id="position" aria-describedby="posHelp" placeholder="Position">
+      <small id="posHelp" class="form-text text-muted col-sm-2">Position</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="teamname"><b>Team:</b></label>
+      <select [(ngModel)]='player.Team' name='TeamName' class='form-control col-sm-6' id='teamname'>
+      <option *ngFor='let t of teams' [ngValue]="t">{{ t.Location + " " + t.TeamName }}</option>
+      </select>
+      <small id="teamHelp" class="form-text text-muted col-sm-2">Team</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownername"><b>Owner:</b></label>
+      <select [(ngModel)]='player.Owner' name='OwnerName' class='form-control col-sm-6' id='ownername'>
+      <option *ngFor='let o of owners' [ngValue]="o">{{ o.OwnerName }}</option>
+      </select>
+      <small id="ownHelp" class="form-text text-muted col-sm-2">Owner</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ppg"><b>PPG:</b></label>
+      <input [(ngModel)]='player.Ppg' name='Ppg' type="text" class="form-control col-sm-6" id="ppg" aria-describedby="ppgHelp" placeholder="PPG">
+      <small id="ppgHelp" class="form-text text-muted col-sm-2">PPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="totalpts"><b>Total Points:</b></label>
+      <input [(ngModel)]='player.PointsTotal' name='TotalPoints' type="text" class="form-control col-sm-6" id="ppg" aria-describedby="ptsHelp" placeholder="Total Points">
+      <small id="ptsHelp" class="form-text text-muted col-sm-2">Total Points</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="carries"><b>Carries:</b></label>
+      <input [(ngModel)]='player.Carries' name='Carries' type="text" class="form-control col-sm-6" id="carr" aria-describedby="carrHelp" placeholder="Carries">
+      <small id="carrHelp" class="form-text text-muted col-sm-2">Carries</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="carrpg"><b>Carries Per Game:</b></label>
+      <input [(ngModel)]='player.CarriesPG' name='CarriesPG' type="text" class="form-control col-sm-6" id="carrpg" aria-describedby="carrpgHelp" placeholder="Carries Per Game">
+      <small id="carrpgHelp" class="form-text text-muted col-sm-2">Carries Per Game</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="catches"><b>Catches:</b></label>
+      <input [(ngModel)]='player.Catches' name='Catches' type="text" class="form-control col-sm-6" id="cat" aria-describedby="catHelp" placeholder="Catches">
+      <small id="catHelp" class="form-text text-muted col-sm-2">Catches</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="catchespg"><b>Catches Per Game:</b></label>
+      <input [(ngModel)]='player.CatchesPG' name='CatchesPG' type="text" class="form-control col-sm-6" id="catpg" aria-describedby="catpgHelp" placeholder="Catches Per Game">
+      <small id="catpgHelp" class="form-text text-muted col-sm-2">Catches Per Game</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ypg"><b>YPG:</b></label>
+      <input [(ngModel)]='player.Ypg' name='YPG' type="text" class="form-control col-sm-6" id="ypg" aria-describedby="ypgHelp" placeholder="YPG">
+      <small id="ypgHelp" class="form-text text-muted col-sm-2">YPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="yardstotal"><b>Total Yards:</b></label>
+      <input [(ngModel)]='player.YardsTotal' name='YdsTotal' type="text" class="form-control col-sm-6" id="ydstotal" aria-describedby="ydstotalHelp" placeholder="Total Yards">
+      <small id="ydstotalHelp" class="form-text text-muted col-sm-2">Total Yards</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="touchdowns"><b>Touchdowns:</b></label>
+      <input [(ngModel)]='player.Touchdowns' name='Touchdowns' type="text" class="form-control col-sm-6" id="tds" aria-describedby="tdsHelp" placeholder="Touchdowns">
+      <small id="catHelp" class="form-text text-muted col-sm-2">Touchdowns</small>
+    </div>
+    <div class="form-group">
+      <button title="Add Player" (click)='create()' class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</div>

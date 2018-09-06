@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div class='component-content'>
+<table class="table table-striped" *ngIf='owner'>
+  <tr>
+    <th>Owner Name</th>
+    <td>{{ owner.OwnerName }}</td>
+  </tr>
+  <tr>
+    <th>Team Name</th>
+    <td>{{ owner.TeamName }}</td>
+  </tr>
+  <tr>
+    <th>Record</th>
+    <td>{{ owner.Record }}</td>
+  </tr>
+  <tr>
+    <th>Current Rank</th>
+    <td>{{ owner.Ranking }}</td>
+  </tr>
+  <tr>
+    <th>Points Per Game</th>
+    <td>{{ owner.Ppg }}</td>
+  </tr>
+  <tr>
+    <th>Yards Per Game</th>
+    <td>{{ owner.Ypg }}</td>
+  </tr>
+  <tr>
+    <th>Total Yards</th>
+    <td>{{ owner.YardsTotal }}</td>
+  </tr>
+  <tr>
+    <th>Points Allowed Per Game</th>
+    <td>{{ owner.PointsAllowedPG }}</td>
+  </tr>
+  <tr>
+    <th>Next Opponent</th>
+    <td>{{ owner.NextOppoenet }}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <a routerLink='/owner/edit/{{owner.Id}}' class='btn btn-primary' title='Update'>Update</a>
+      <a routerLink='/owner/list' class='btn btn-secondary' title='Back'>Back</a>
+    </td>
+  </tr>
+</table>
+</div>

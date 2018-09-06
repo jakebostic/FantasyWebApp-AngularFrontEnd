@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div class='component-content'>
+  <p *ngIf='!owner'>Loading...</p>
+  <div *ngIf='owner'>
+    <div class="form-group row" id="pad">
+      <label class='col-form-label col-sm-2' for="ownerteamname"><b>Team Name:</b></label>
+      <input [(ngModel)]='owner.TeamName' name='TeamName' type='text' class='form-control col-sm-6' id='ownerteamname' aria-describedby="teamnameHelp" placeholder="Team Name">
+      <small id="teamnameHelp" class="form-text text-muted col-sm-2">Team Name</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerrecord"><b>Record:</b></label>
+      <input [(ngModel)]='owner.Record' name='Record' type='text' class='form-control col-sm-6' id='ownerrecord' aria-describedby="orecordHelp" placeholder="Record">
+      <small id="orecordHelp" class="form-text text-muted col-sm-2">Record</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerranking"><b>Current Rank:</b></label>
+      <input [(ngModel)]='owner.Ranking' name='CurrentRank' type='text' class='form-control col-sm-6' id='ownerranking' aria-describedby="orankingHelp" placeholder="Current Rank">
+      <small id="orankingHelp" class="form-text text-muted col-sm-2">Current Rank</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerppg"><b>PPG:</b></label>
+      <input [(ngModel)]='owner.Ppg' name='PPG' type='text' class='form-control col-sm-6' id='ownerppg' aria-describedby="ownerppgHelp" placeholder="PPG">
+      <small id="ownerppgHelp" class="form-text text-muted col-sm-2">PPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownertotalpoints"><b>Total Points:</b></label>
+      <input [(ngModel)]='owner.TotalPoints' name='TotalPoints' type='text' class='form-control col-sm-6' id='ownertpoints' aria-describedby="totalpointsHelp" placeholder="Total Points">
+      <small id="totalpointsHelp" class="form-text text-muted col-sm-2">Total Points</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerypg"><b>YPG:</b></label>
+      <input [(ngModel)]='owner.Ypg' name='YPG' type='text' class='form-control col-sm-6' id='ownerypg' aria-describedby="ownerypgHelp" placeholder="YPG">
+      <small id="ownerypgHelp" class="form-text text-muted col-sm-2">YPG</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownertotalyards"><b>Total Yards:</b></label>
+      <input [(ngModel)]='owner.YardsTotal' name='TotalYards' type='text' class='form-control col-sm-6' id='ownertotalyards' aria-describedby="totalyardsHelp" placeholder="Total Yards">
+      <small id="totalyardsHelp" class="form-text text-muted col-sm-2">Total Yards</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerptsallowed"><b>Points Allowed:</b></label>
+      <input [(ngModel)]='owner.PointsAllowed' name='PointsAllowed' type='text' class='form-control col-sm-6' id='ownerptsallowed' aria-describedby="ptsallowedHelp" placeholder="Points Allowed">
+      <small id="ptsallowedHelp" class="form-text text-muted col-sm-2">Points Allowed</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="ownerptsallpg"><b>Points Allowed Per Game:</b></label>
+      <input [(ngModel)]='owner.PointsAllowedPG' name='PointsAllowedPerGame' type='text' class='form-control col-sm-6' id='ownerptsallpg' aria-describedby="ptsallpgHelp" placeholder="Points Allowed Per Game">
+      <small id="ptsallpgHelp" class="form-text text-muted col-sm-2">Points Allowed Per Game</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="nxtopp"><b>Next Opponent:</b></label>
+      <input [(ngModel)]='owner.NextOpponent' name='NextOpponent' type='text' class='form-control col-sm-6' id='nxtopp' aria-describedby="nxtoppHelp" placeholder="Next Opponent">
+      <small id="nxtoppHelp" class="form-text text-muted col-sm-2">Next Opponent</small>
+    </div>
+    <div class='form-group'>
+      <button title="Update Team" (click)='change()' class='btn btn-primary'>Submit</button>
+    </div>
+  </div>
+</div>

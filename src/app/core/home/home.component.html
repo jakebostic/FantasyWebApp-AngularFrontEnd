@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div id="locator">
+  <h5><b>League Manager's Note</b></h5>
+  <h2><b>Draft Complete, Season Begins</b></h2>
+  <img src="assets/packers.jpg" alt="Packers">
+</div>
+<p class="caption"><b>Coming off his first Championship, will Ashton repeat with Rodgers?
+  </b></p><br>
+<b><u>Preseason Rankings</u></b>
+<ol>
+  <li><b>Clayton Steinriede</b><br>
+    <i>Three RB's to start the draft in a thin position will pay dividends</i></li>
+  <li><b>Tyler Esham</b><br>
+    <i>Will Lamar Miller and Amari Cooper be able to help this team remains a question</i></li>
+  <li><b>Zak Ritter</b><br>
+    <i>A lot of potential, but a lot unproven players</i></li>
+  <li><b>Aaron Smith</b><br>
+    <i>AB and Julio could be a deadly combo if Julio has a consistent season</i></li>
+  <li><b>Ian Courtney</b><br>
+    <i>Shady could've been a reach Round 2 and backup RB's aren't superb</i></li>
+  <li><b>Jake Bostic</b><br>
+    <i>Could have a lethal 1-2 punch at RB's</i></li>
+  <li><b>Miles Derkson</b><br>
+    <i>WR's is a definite strength of this squad</i></li>
+  <li><b>Jesse Stacy</b><br>
+    <i>Chiefs success this year could be a determining factor for this team</i></li>
+  <li><b>Ashton Kelchner</b><br>
+    <i>Big hill for this team to climb to go back-to back... pun intended</i></li>
+  <li><b>Korey Eads</b><br>
+    <i>Big investment in the Patriots early could be detrimental for them</i></li>
+</ol>
+<br>
+<b><u>Completed Draftboard</u></b><br>
+<img src="assets/draftboard.png" alt="Draftboard">
+<br>
+<br>
+<h5><b>Live Standings</b></h5>
+<p *ngIf='!owners'>Loading...</p>
+<table class="table table-striped" *ngIf='owners'>
+  <tr>
+    <th>Rank</th>
+    <th>Team</th>
+    <th>Record</th>
+  </tr>
+  <tr *ngFor='let o of owners | sort:sortBy'>
+    <td>{{ o.Ranking }}</td>
+    <td>{{ o.TeamName }}</td>
+    <td>{{ o.Record }}</td>
+  </tr>
+</table>

@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="component-content">
+  <span class="component-title"><b>{{ title }}</b></span>
+  <span><a routerLink='/player/create'>
+        <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a>
+        </span>
+</div>
+<p *ngIf='!players'>Loading...</p>
+<table class="table table-striped" *ngIf="players">
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Team</th>
+    <th>Owner</th>
+    <th class="btn-link"><a data-toggle="tooltip" title="Sort" class="btn btn-link font-weight-bold" (click)="setSortBy('Ppg')">PPG</a></th>
+    <th>Details/Update</th>
+  </tr>
+  <tr *ngFor='let p of players'>
+    <td>{{ p.FirstName + " " + p.LastName }}</td>
+    <td>{{ p.Position }}</td>
+    <td>{{ p.Team.Location + " " + p.Team.TeamName }}</td>
+    <td>{{ p.Owner.OwnerName }}</td>
+    <td>{{ p.Ppg }}</td>
+    <td class="actions">
+      <a routerLink='/player/detail/{{p.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+      <a routerLink='/player/edit/{{p.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Update'></a>
+    </td>
+  </tr>
+</table>

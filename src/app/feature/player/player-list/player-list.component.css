@@ -1,0 +1,9 @@
+.actions {
+  padding-left: 40px;
+}
+
+.btn-link {
+  position: relative;
+  bottom: 3px;
+  color: green;
+}

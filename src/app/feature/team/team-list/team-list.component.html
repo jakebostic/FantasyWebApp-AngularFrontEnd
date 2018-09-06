@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="component-content">
+  <div class="center">
+    <span class="component-title"><b>{{ title }}</b></span>
+  </div>
+</div>
+<p *ngIf='!teams'>Loading...</p>
+<table class="table table-striped" *ngIf='teams'>
+  <tr>
+    <th>Team Name</th>
+    <th>Division</th>
+    <th>Record</th>
+    <th>Details/Update</th>
+  </tr>
+  <tr *ngFor='let t of teams'>
+    <td>{{ t.Location + " " + t.TeamName }}</td>
+    <td>{{ t.Division }}</td>
+    <td>{{ t.Record }}</td>
+      <td class="actions">
+        <a routerLink='/team/detail/{{t.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+        <a routerLink='/team/edit/{{t.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Update'></a>
+      </td>
+  </tr>
+</table>
+
+
+

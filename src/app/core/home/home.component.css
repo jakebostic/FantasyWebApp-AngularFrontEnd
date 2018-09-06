@@ -1,0 +1,28 @@
+.table-striped {
+  width: 100%;
+}
+
+#locator {
+  text-align: center;
+}
+
+h5 {
+  color: gray;
+}
+
+#background {
+  opacity: .5;
+}
+
+img {
+  height: 400px;
+  width: 50%;
+}
+
+.caption {
+  text-align: center;
+}
+
+
+
+
